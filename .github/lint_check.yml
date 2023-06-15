@@ -1,0 +1,19 @@
+on: [push]
+
+jobs:
+  clippy-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Set up Rust
+        uses: actions/setup-rust@v1
+
+      - name: Build and run Clippy
+        run: |
+          cargo install --force clippy
+          cargo clippy --all-targets --all-features -- -D warnings
+
+      - name: Check for errors and warnings
+        run: .github/workflows/scripts/clippy.sh
