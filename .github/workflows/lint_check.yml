@@ -12,4 +12,4 @@ jobs:
         run: cargo clippy --all-targets --all-features
 
       - name: Check for errors and warnings
-        run: .github/workflows/scripts/clippy.sh
+        run: bash .github/workflows/scripts/clippy.sh
