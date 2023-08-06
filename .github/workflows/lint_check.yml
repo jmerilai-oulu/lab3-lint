@@ -7,4 +7,6 @@ jobs:
   lint_check:
     runs-on: ubuntu-latest
     steps:
-      # Fill in steps here
+      - uses: actions/checkout@v3
+      - name: Run cargo check
+        # Fill in step(s) here
