@@ -1,9 +1,12 @@
-on: [push]
+# 1. Execute on push
 
 jobs:
   lint_check:
-    runs-on: ubuntu-latest
+    # 2. Run on latest Ubuntu
+
     steps:
-      - uses: actions/checkout@v3
-      - name: Run cargo check
-        # Fill in here
+      - name: Checkout
+      # 3. Checkout repository
+
+      - name: Run linter
+      # 4. Run Rust's linter to check for warnings and errors
